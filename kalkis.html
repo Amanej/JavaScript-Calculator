@@ -1,0 +1,121 @@
+<html>
+
+<script>
+
+function calculatethefield() {
+  var calculatorfield = document.getElementById("calcfield").value;
+  var output = eval(calculatorfield);
+  document.getElementById("calcfield").value = output;
+  focusInput();
+}
+
+function clearfield() {
+  var calculatorfield = document.getElementById("calcfield");
+  calculatorfield.value = "0";
+  focusInput();
+}
+
+function addition() {
+  var calculatorfield = document.getElementById("calcfield");
+  calculatorfield.value += "+";
+  focusInput();
+}
+
+function multiplication() {
+  var calculatorfield = document.getElementById("calcfield");
+  calculatorfield.value += "*";
+  focusInput();
+}
+
+function subtraction() {
+  var calculatorfield = document.getElementById("calcfield");
+  calculatorfield.value += "-";
+  focusInput();
+}
+
+function division() {
+  var calculatorfield = document.getElementById("calcfield");
+  calculatorfield.value += "/";
+  focusInput();
+}
+
+function focusInput() {
+  var calculatorfield = document.getElementById("calcfield");
+  calculatorfield.focus();
+}
+
+</script>
+
+<style>
+
+.calculator {
+  width: 400px;
+  margin: 20px;
+  padding: 40px;
+}
+
+.calculator input {
+  width: 100%;
+  height: 40px;
+  font-size: 2rem;
+  color: #676767;
+  text-align: right;
+}
+
+a {
+  text-align: center;
+  display: inline-block;
+}
+
+.smallbuttons {
+  width: 100%;
+}
+
+.smallbuttons a {
+  font-size: 2rem;
+  background: linear-gradient(#C5C5C5,lightgrey);
+  min-width: 78px;
+  padding: 0px 10px;
+  border: 1px solid #8E8D8D;
+}
+
+.bigbuttons {
+  width: 100%;
+}
+
+.bigbuttons a {
+  font-size: 2.5rem;
+  background: linear-gradient(#F5F4F4,#E0E0E0);
+  width: 198px;
+  border: 1px solid #8E8D8D;
+}
+
+h1 {
+  color: #676767;
+}
+
+</style>
+
+<head>
+<title>JS kalkulator</title>
+</head>
+
+<body>
+<div class="calculator">
+
+  <h1>Amans JS kalkulator</h1>
+
+  <input type="text" name="calcfield" id="calcfield" onKeydown=”if (event.keyCode==13) calculatethefield();” placeholder="0" autofocus>
+
+  <div class="smallbuttons">
+    <a onClick="addition()">+</a><a onClick="subtraction()">-</a><a onClick="multiplication()">x</a><a onClick="division()">/</a>
+  </div>
+
+  <div class="bigbuttons">
+    <a onClick="clearfield()">C</a><a onClick="calculatethefield()">=</a>
+  </div>
+
+</div>
+<body>
+
+</html>
